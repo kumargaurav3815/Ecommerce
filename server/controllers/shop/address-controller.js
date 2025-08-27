@@ -1,3 +1,5 @@
+/** @format */
+
 const Address = require("../../models/Address");
 
 const addAddress = async (req, res) => {
@@ -60,7 +62,7 @@ const fetchAllAddress = async (req, res) => {
   }
 };
 
-const editAddress = async (req, res) => {
+const editaAddress = async (req, res) => {
   try {
     const { userId, addressId } = req.params;
     const formData = req.body;
