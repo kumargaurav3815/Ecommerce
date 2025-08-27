@@ -1,3 +1,5 @@
+/** @format */
+
 import { useState } from "react";
 import CommonForm from "../common/form";
 import { DialogContent } from "../ui/dialog";
@@ -21,8 +23,6 @@ function AdminOrderDetailsView({ orderDetails }) {
   const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const { toast } = useToast();
-
-  console.log(orderDetails, "orderDetailsorderDetails");
 
   function handleUpdateStatus(event) {
     event.preventDefault();
@@ -76,8 +76,7 @@ function AdminOrderDetailsView({ orderDetails }) {
                     : orderDetails?.orderStatus === "rejected"
                     ? "bg-red-600"
                     : "bg-black"
-                }`}
-              >
+                }`}>
                 {orderDetails?.orderStatus}
               </Badge>
             </Label>

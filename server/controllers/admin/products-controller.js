@@ -1,3 +1,5 @@
+/** @format */
+
 const { imageUploadUtil } = require("../../helpers/cloudinary");
 const Product = require("../../models/Product");
 
@@ -12,7 +14,6 @@ const handleImageUpload = async (req, res) => {
       result,
     });
   } catch (error) {
-    console.log(error);
     res.json({
       success: false,
       message: "Error occured",
@@ -35,8 +36,6 @@ const addProduct = async (req, res) => {
       averageReview,
     } = req.body;
 
-    console.log(averageReview, "averageReview");
-
     const newlyCreatedProduct = new Product({
       image,
       title,
@@ -55,7 +54,6 @@ const addProduct = async (req, res) => {
       data: newlyCreatedProduct,
     });
   } catch (e) {
-    console.log(e);
     res.status(500).json({
       success: false,
       message: "Error occured",
@@ -73,7 +71,6 @@ const fetchAllProducts = async (req, res) => {
       data: listOfProducts,
     });
   } catch (e) {
-    console.log(e);
     res.status(500).json({
       success: false,
       message: "Error occured",
@@ -121,7 +118,6 @@ const editProduct = async (req, res) => {
       data: findProduct,
     });
   } catch (e) {
-    console.log(e);
     res.status(500).json({
       success: false,
       message: "Error occured",
@@ -146,7 +142,6 @@ const deleteProduct = async (req, res) => {
       message: "Product delete successfully",
     });
   } catch (e) {
-    console.log(e);
     res.status(500).json({
       success: false,
       message: "Error occured",

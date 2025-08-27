@@ -1,3 +1,5 @@
+/** @format */
+
 import { Minus, Plus, Trash } from "lucide-react";
 import { Button } from "../ui/button";
 import { useDispatch, useSelector } from "react-redux";
@@ -24,8 +26,6 @@ function UserCartItemsContent({ cartItem }) {
           (product) => product._id === getCartItem?.productId
         );
         const getTotalStock = productList[getCurrentProductIndex].totalStock;
-
-        console.log(getCurrentProductIndex, getTotalStock, "getTotalStock");
 
         if (indexOfCurrentCartItem > -1) {
           const getQuantity = getCartItems[indexOfCurrentCartItem].quantity;
@@ -86,8 +86,7 @@ function UserCartItemsContent({ cartItem }) {
             className="h-8 w-8 rounded-full"
             size="icon"
             disabled={cartItem?.quantity === 1}
-            onClick={() => handleUpdateQuantity(cartItem, "minus")}
-          >
+            onClick={() => handleUpdateQuantity(cartItem, "minus")}>
             <Minus className="w-4 h-4" />
             <span className="sr-only">Decrease</span>
           </Button>
@@ -96,8 +95,7 @@ function UserCartItemsContent({ cartItem }) {
             variant="outline"
             className="h-8 w-8 rounded-full"
             size="icon"
-            onClick={() => handleUpdateQuantity(cartItem, "plus")}
-          >
+            onClick={() => handleUpdateQuantity(cartItem, "plus")}>
             <Plus className="w-4 h-4" />
             <span className="sr-only">Decrease</span>
           </Button>

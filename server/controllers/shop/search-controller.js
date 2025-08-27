@@ -1,3 +1,5 @@
+/** @format */
+
 const Product = require("../../models/Product");
 
 const searchProducts = async (req, res) => {
@@ -28,7 +30,6 @@ const searchProducts = async (req, res) => {
       data: searchResults,
     });
   } catch (error) {
-    console.log(error);
     res.status(500).json({
       success: false,
       message: "Error",

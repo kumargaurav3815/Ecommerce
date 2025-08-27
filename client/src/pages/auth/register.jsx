@@ -1,3 +1,5 @@
+/** @format */
+
 import CommonForm from "@/components/common/form";
 import { useToast } from "@/components/ui/use-toast";
 import { registerFormControls } from "@/config";
@@ -35,8 +37,6 @@ function AuthRegister() {
     });
   }
 
-  console.log(formData);
-
   return (
     <div className="mx-auto w-full max-w-md space-y-6">
       <div className="text-center">
@@ -47,8 +47,7 @@ function AuthRegister() {
           Already have an account
           <Link
             className="font-medium ml-2 text-primary hover:underline"
-            to="/auth/login"
-          >
+            to="/auth/login">
             Login
           </Link>
         </p>

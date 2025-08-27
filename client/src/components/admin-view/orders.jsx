@@ -1,3 +1,5 @@
+/** @format */
+
 import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
@@ -31,8 +33,6 @@ function AdminOrdersView() {
   useEffect(() => {
     dispatch(getAllOrdersForAdmin());
   }, [dispatch]);
-
-  console.log(orderDetails, "orderList");
 
   useEffect(() => {
     if (orderDetails !== null) setOpenDetailsDialog(true);
@@ -70,8 +70,7 @@ function AdminOrdersView() {
                             : orderItem?.orderStatus === "rejected"
                             ? "bg-red-600"
                             : "bg-black"
-                        }`}
-                      >
+                        }`}>
                         {orderItem?.orderStatus}
                       </Badge>
                     </TableCell>
@@ -82,13 +81,11 @@ function AdminOrdersView() {
                         onOpenChange={() => {
                           setOpenDetailsDialog(false);
                           dispatch(resetOrderDetails());
-                        }}
-                      >
+                        }}>
                         <Button
                           onClick={() =>
                             handleFetchOrderDetails(orderItem?._id)
-                          }
-                        >
+                          }>
                           View Details
                         </Button>
                         <AdminOrderDetailsView orderDetails={orderDetails} />

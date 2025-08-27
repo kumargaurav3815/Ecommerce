@@ -1,3 +1,5 @@
+/** @format */
+
 import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
@@ -37,8 +39,6 @@ function ShoppingOrders() {
     if (orderDetails !== null) setOpenDetailsDialog(true);
   }, [orderDetails]);
 
-  console.log(orderDetails, "orderDetails");
-
   return (
     <Card>
       <CardHeader>
@@ -71,8 +71,7 @@ function ShoppingOrders() {
                             : orderItem?.orderStatus === "rejected"
                             ? "bg-red-600"
                             : "bg-black"
-                        }`}
-                      >
+                        }`}>
                         {orderItem?.orderStatus}
                       </Badge>
                     </TableCell>
@@ -83,13 +82,11 @@ function ShoppingOrders() {
                         onOpenChange={() => {
                           setOpenDetailsDialog(false);
                           dispatch(resetOrderDetails());
-                        }}
-                      >
+                        }}>
                         <Button
                           onClick={() =>
                             handleFetchOrderDetails(orderItem?._id)
-                          }
-                        >
+                          }>
                           View Details
                         </Button>
                         <ShoppingOrderDetailsView orderDetails={orderDetails} />

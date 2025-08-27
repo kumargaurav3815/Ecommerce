@@ -1,3 +1,5 @@
+/** @format */
+
 import { StarIcon } from "lucide-react";
 import { Avatar, AvatarFallback } from "../ui/avatar";
 import { Button } from "../ui/button";
@@ -24,8 +26,6 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
   const { toast } = useToast();
 
   function handleRatingChange(getRating) {
-    console.log(getRating, "getRating");
-
     setRating(getRating);
   }
 
@@ -96,8 +96,6 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
     if (productDetails !== null) dispatch(getReviews(productDetails?._id));
   }, [productDetails]);
 
-  console.log(reviews, "reviews");
-
   const averageReview =
     reviews && reviews.length > 0
       ? reviews.reduce((sum, reviewItem) => sum + reviewItem.reviewValue, 0) /
@@ -127,8 +125,7 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
             <p
               className={`text-3xl font-bold text-primary ${
                 productDetails?.salePrice > 0 ? "line-through" : ""
-              }`}
-            >
+              }`}>
               ${productDetails?.price}
             </p>
             {productDetails?.salePrice > 0 ? (
@@ -158,8 +155,7 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
                     productDetails?._id,
                     productDetails?.totalStock
                   )
-                }
-              >
+                }>
                 Add to Cart
               </Button>
             )}
@@ -209,8 +205,7 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
               />
               <Button
                 onClick={handleAddReview}
-                disabled={reviewMsg.trim() === ""}
-              >
+                disabled={reviewMsg.trim() === ""}>
                 Submit
               </Button>
             </div>
