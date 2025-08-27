@@ -3,7 +3,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// Base URL for backend
 const API_BASE = "https://ecommerce-q6f7.onrender.com/api/shop/address";
 
 const initialState = {

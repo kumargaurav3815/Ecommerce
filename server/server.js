@@ -29,9 +29,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: [
-      "https://shoppingonfabkart.netlify.app", // deployed frontend
-    ],
+    origin: ["https://shoppingonfabkart.netlify.app"],
 
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [

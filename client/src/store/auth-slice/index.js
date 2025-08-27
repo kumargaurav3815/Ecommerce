@@ -1,7 +1,7 @@
 /** @format */
 
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import api from "../../api"; // adjust path if needed
+import api from "../../api";
 
 const initialState = {
   isAuthenticated: false,
