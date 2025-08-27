@@ -30,7 +30,7 @@ export const fetchAllAddresses = createAsyncThunk(
 );
 
 // Edit an address
-export const editAddress = createAsyncThunk(
+export const editaAddress = createAsyncThunk(
   "/addresses/editAddress",
   async ({ userId, addressId, formData }) => {
     const response = await axios.put(
