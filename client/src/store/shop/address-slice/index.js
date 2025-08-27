@@ -31,7 +31,7 @@ export const fetchAllAddresses = createAsyncThunk(
 
 // Edit an address
 export const editaAddress = createAsyncThunk(
-  "/addresses/editAddress",
+  "/addresses/editaAddress ",
   async ({ userId, addressId, formData }) => {
     const response = await axios.put(
       `${API_BASE}/update/${userId}/${addressId}`,
@@ -83,13 +83,13 @@ const addressSlice = createSlice({
       })
 
       // Edit
-      .addCase(editAddress.pending, (state) => {
+      .addCase(editaAddress.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(editAddress.fulfilled, (state) => {
+      .addCase(editaAddress.fulfilled, (state) => {
         state.isLoading = false;
       })
-      .addCase(editAddress.rejected, (state) => {
+      .addCase(editaAddress.rejected, (state) => {
         state.isLoading = false;
       })
 

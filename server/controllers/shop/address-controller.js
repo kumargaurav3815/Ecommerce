@@ -135,4 +135,4 @@ const deleteAddress = async (req, res) => {
   }
 };
 
-module.exports = { addAddress, editAddress, fetchAllAddress, deleteAddress };
+module.exports = { addAddress, editaAddress, fetchAllAddress, deleteAddress };

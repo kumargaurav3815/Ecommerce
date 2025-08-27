@@ -1,3 +1,5 @@
+/** @format */
+
 import { useEffect, useState } from "react";
 import CommonForm from "../common/form";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
@@ -87,7 +89,7 @@ function Address({ setCurrentSelectedAddress, selectedId }) {
     });
   }
 
-  function handleEditAddress(getCuurentAddress) {
+  function handleeditaAddress(getCuurentAddress) {
     setCurrentEditedId(getCuurentAddress?._id);
     setFormData({
       ...formData,
@@ -120,7 +122,7 @@ function Address({ setCurrentSelectedAddress, selectedId }) {
                 selectedId={selectedId}
                 handleDeleteAddress={handleDeleteAddress}
                 addressInfo={singleAddressItem}
-                handleEditAddress={handleEditAddress}
+                handleeditaAddress={handleeditaAddress}
                 setCurrentSelectedAddress={setCurrentSelectedAddress}
               />
             ))

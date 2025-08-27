@@ -1,3 +1,5 @@
+/** @format */
+
 import { Button } from "../ui/button";
 import { Card, CardContent, CardFooter } from "../ui/card";
 import { Label } from "../ui/label";
@@ -5,7 +7,7 @@ import { Label } from "../ui/label";
 function AddressCard({
   addressInfo,
   handleDeleteAddress,
-  handleEditAddress,
+  handleeditaAddress,
   setCurrentSelectedAddress,
   selectedId,
 }) {
@@ -20,8 +22,7 @@ function AddressCard({
         selectedId?._id === addressInfo?._id
           ? "border-red-900 border-[4px]"
           : "border-black"
-      }`}
-    >
+      }`}>
       <CardContent className="grid p-4 gap-4">
         <Label>Address: {addressInfo?.address}</Label>
         <Label>City: {addressInfo?.city}</Label>
@@ -30,7 +31,7 @@ function AddressCard({
         <Label>Notes: {addressInfo?.notes}</Label>
       </CardContent>
       <CardFooter className="p-3 flex justify-between">
-        <Button onClick={() => handleEditAddress(addressInfo)}>Edit</Button>
+        <Button onClick={() => handleeditaAddress(addressInfo)}>Edit</Button>
         <Button onClick={() => handleDeleteAddress(addressInfo)}>Delete</Button>
       </CardFooter>
     </Card>
