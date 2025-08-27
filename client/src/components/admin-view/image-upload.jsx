@@ -52,9 +52,10 @@ function ProductImageUpload({
     const data = new FormData();
     data.append("my_file", imageFile);
     const response = await axios.post(
-      "https://ecommerce-q6f7.onrender.com/api/admin/products/upload-image",
+      `${import.meta.env.VITE_API_BASE_URL}/admin/products/upload-image`,
       data
     );
+
     console.log(response, "response");
 
     if (response?.data?.success) {

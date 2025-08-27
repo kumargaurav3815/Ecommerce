@@ -3,6 +3,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const BASE_URL = "https://ecommerce-q6f7.onrender.com";
+
 const initialState = {
   isLoading: false,
   reviews: [],
@@ -12,7 +14,7 @@ export const addReview = createAsyncThunk(
   "/order/addReview",
   async (formdata) => {
     const response = await axios.post(
-      `https://ecommerce-q6f7.onrender.com/api/shop/review/add`,
+      `${BASE_URL}/api/shop/review/add`,
       formdata
     );
 
@@ -21,9 +23,7 @@ export const addReview = createAsyncThunk(
 );
 
 export const getReviews = createAsyncThunk("/order/getReviews", async (id) => {
-  const response = await axios.get(
-    `https://ecommerce-q6f7.onrender.com/api/shop/review/${id}`
-  );
+  const response = await axios.get(`${BASE_URL}/api/shop/review/${id}`);
 
   return response.data;
 });
