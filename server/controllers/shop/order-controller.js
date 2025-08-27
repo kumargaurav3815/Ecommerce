@@ -1,3 +1,5 @@
+/** @format */
+
 const paypal = require("../../helpers/paypal");
 const Order = require("../../models/Order");
 const Cart = require("../../models/Cart");
@@ -26,8 +28,8 @@ const createOrder = async (req, res) => {
         payment_method: "paypal",
       },
       redirect_urls: {
-        return_url: "http://localhost:5173/shop/paypal-return",
-        cancel_url: "http://localhost:5173/shop/paypal-cancel",
+        return_url: "https://ecommerce-q6f7.onrender.com/shop/paypal-return",
+        cancel_url: "https://ecommerce-q6f7.onrender.com/shop/paypal-cancel",
       },
       transactions: [
         {

@@ -1,3 +1,5 @@
+/** @format */
+
 import { FileIcon, UploadCloudIcon, XIcon } from "lucide-react";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
@@ -50,7 +52,7 @@ function ProductImageUpload({
     const data = new FormData();
     data.append("my_file", imageFile);
     const response = await axios.post(
-      "http://localhost:5000/api/admin/products/upload-image",
+      "https://ecommerce-q6f7.onrender.com/api/admin/products/upload-image",
       data
     );
     console.log(response, "response");
@@ -67,16 +69,14 @@ function ProductImageUpload({
 
   return (
     <div
-      className={`w-full  mt-4 ${isCustomStyling ? "" : "max-w-md mx-auto"}`}
-    >
+      className={`w-full  mt-4 ${isCustomStyling ? "" : "max-w-md mx-auto"}`}>
       <Label className="text-lg font-semibold mb-2 block">Upload Image</Label>
       <div
         onDragOver={handleDragOver}
         onDrop={handleDrop}
         className={`${
           isEditMode ? "opacity-60" : ""
-        } border-2 border-dashed rounded-lg p-4`}
-      >
+        } border-2 border-dashed rounded-lg p-4`}>
         <Input
           id="image-upload"
           type="file"
@@ -90,8 +90,7 @@ function ProductImageUpload({
             htmlFor="image-upload"
             className={`${
               isEditMode ? "cursor-not-allowed" : ""
-            } flex flex-col items-center justify-center h-32 cursor-pointer`}
-          >
+            } flex flex-col items-center justify-center h-32 cursor-pointer`}>
             <UploadCloudIcon className="w-10 h-10 text-muted-foreground mb-2" />
             <span>Drag & drop or click to upload image</span>
           </Label>
@@ -107,8 +106,7 @@ function ProductImageUpload({
               variant="ghost"
               size="icon"
               className="text-muted-foreground hover:text-foreground"
-              onClick={handleRemoveImage}
-            >
+              onClick={handleRemoveImage}>
               <XIcon className="w-4 h-4" />
               <span className="sr-only">Remove File</span>
             </Button>
